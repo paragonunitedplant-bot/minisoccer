@@ -16,26 +16,27 @@
             background-blend-mode: overlay;
             color: #ffffff;
             margin: 0;
-            padding: 10px 15px;
+            padding: 8px 10px;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            overflow-x: hidden;
         }
 
         .top-header {
             background: rgba(15, 23, 42, 0.85);
             border-bottom: 3px solid #ef4444;
-            padding: 10px 20px;
+            padding: 8px 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-radius: 8px;
-            margin-bottom: 15px;
+            margin-bottom: 8px;
         }
         .top-header h2 {
             margin: 0;
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             letter-spacing: 1px;
             text-transform: uppercase;
             color: #f8fafc;
@@ -43,10 +44,10 @@
         .live-badge {
             background: #ef4444;
             color: white;
-            padding: 3px 10px;
+            padding: 4px 12px;
             border-radius: 4px;
             font-weight: bold;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             animation: pulse 1.5s infinite;
         }
         @keyframes pulse {
@@ -58,53 +59,54 @@
         .sub-title {
             text-align: center;
             color: #38bdf8;
-            font-size: 0.85rem;
+            font-size: 0.95rem;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
-        /* Layout Grid 9 Kolom Presisi */
+        /* Layout Grid 9 Kolom Melebar Maksimal Kanan-Kiri */
         .bracket-wrapper {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr 120px 260px 120px 1fr 1fr 1fr;
-            gap: 12px;
+            grid-template-columns: repeat(3, 1fr) 130px 270px 130px repeat(3, 1fr);
+            gap: 8px;
             align-items: center;
             width: 100%;
-            max-width: 1650px;
+            max-width: 98vw; /* Memenuhi layar kanan & kiri */
             margin: 0 auto;
         }
 
         .col-header {
             text-align: center;
-            font-size: 9px;
+            font-size: 11px;
             font-weight: 800;
             text-transform: uppercase;
-            color: #94a3b8;
-            background: rgba(15, 23, 42, 0.7);
-            padding: 5px 2px;
+            color: #38bdf8;
+            background: rgba(15, 23, 42, 0.8);
+            padding: 6px 2px;
             border-radius: 4px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(56, 189, 248, 0.3);
             margin-bottom: 8px;
+            letter-spacing: 0.5px;
         }
 
         .col-group {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
             justify-content: space-around;
-            min-height: 480px;
+            min-height: 500px;
         }
 
-        /* Desain Kotak Match */
+        /* Desain Kotak Match dengan Font Lebih Besar */
         .card {
             background: rgba(30, 41, 59, 0.95);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 6px;
-            padding: 6px 10px;
+            padding: 6px 8px;
             width: 100%;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
         }
         .card.final-card {
             border: 2px solid #ef4444;
@@ -115,9 +117,9 @@
             background: rgba(146, 64, 14, 0.85);
         }
         .match-header {
-            font-size: 8px;
+            font-size: 9px;
             color: #94a3b8;
-            margin-bottom: 2px;
+            margin-bottom: 3px;
             text-transform: uppercase;
             font-weight: 700;
         }
@@ -125,16 +127,20 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 3px 6px;
-            background: rgba(15, 23, 42, 0.75);
-            margin-bottom: 2px;
-            border-radius: 3px;
-            font-weight: 600;
-            font-size: 11px;
+            padding: 4px 7px;
+            background: rgba(15, 23, 42, 0.8);
+            margin-bottom: 3px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 13px; /* Teks nama tim diperbesar */
+        }
+        .team-row b {
+            font-size: 14px; /* Angka skor diperbesar */
+            color: #ffffff;
         }
         .winner {
-            border-left: 3px solid #34d399;
-            background: rgba(6, 78, 59, 0.6);
+            border-left: 4px solid #34d399;
+            background: rgba(6, 78, 59, 0.7);
         }
 
         /* Area Tengah (Final, Juara 3, Semifinal A11 & B11) */
@@ -145,27 +151,27 @@
             justify-content: center;
             align-items: center;
             background: rgba(15, 23, 42, 0.85);
-            padding: 12px;
+            padding: 10px;
             border-radius: 10px;
             border: 1px solid rgba(56, 189, 248, 0.3);
-            min-height: 480px;
+            min-height: 500px;
         }
 
         /* Top Scorer */
         .top-scorer-box {
             width: 100%;
-            max-width: 380px;
-            margin: 10px auto 5px auto;
-            background: rgba(30, 41, 59, 0.9);
+            max-width: 420px;
+            margin: 10px auto 0 auto;
+            background: rgba(30, 41, 59, 0.95);
             backdrop-filter: blur(6px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 8px 15px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 8px 16px;
             border-radius: 8px;
         }
         .top-scorer-box h2 {
             color: #34d399;
             text-transform: uppercase;
-            font-size: 0.85rem;
+            font-size: 0.95rem;
             text-align: center;
             border-bottom: 1px solid #374151;
             padding-bottom: 4px;
@@ -175,9 +181,10 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 3px 0;
+            padding: 4px 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            font-size: 11px;
+            font-size: 12px;
+            font-weight: 600;
         }
         .scorer-row:last-child { border-bottom: none; }
     </style>
@@ -193,7 +200,7 @@
 
     <div class="bracket-wrapper">
         
-        <!-- KOLOM 1 (SISI KIRI PALING LUAR): A1, A3, B1, B3[cite: 10] -->
+        <!-- KOLOM 1 (KIRI PALING LUAR): A1, A3, B1, B3 -->
         <div>
             <div class="col-header">Round 24</div>
             <div class="col-group">
@@ -204,7 +211,7 @@
             </div>
         </div>
 
-        <!-- KOLOM 2: A5, A7, B5, B7[cite: 10] -->
+        <!-- KOLOM 2: A5, A7, B5, B7 -->
         <div>
             <div class="col-header">Round 16</div>
             <div class="col-group">
@@ -215,7 +222,7 @@
             </div>
         </div>
 
-        <!-- KOLOM 3: A9, B9[cite: 10] -->
+        <!-- KOLOM 3: A9, B9 -->
         <div>
             <div class="col-header">Quarter Final</div>
             <div class="col-group" style="justify-content: space-around;">
@@ -224,7 +231,7 @@
             </div>
         </div>
 
-        <!-- KOLOM 4: SEMIFINAL KIRI (A11)[cite: 10] -->
+        <!-- KOLOM 4: SEMIFINAL KIRI (A11) -->
         <div>
             <div class="col-header">Semifinal</div>
             <div class="col-group" style="justify-content: center;">
@@ -232,10 +239,10 @@
             </div>
         </div>
 
-        <!-- KOLOM TENGAH: GRAND FINAL (A12) & JUARA 3 (B12)[cite: 10] -->
+        <!-- KOLOM TENGAH: GRAND FINAL (A12) & JUARA 3 (B12) -->
         <div class="center-stage">
             <div style="width: 100%;">
-                <div style="font-size: 8px; color: #ef4444; font-weight: bold; text-transform: uppercase; margin-bottom: 2px; text-align: center;">🏆 Grand Final (Juara 1)</div>
+                <div style="font-size: 9px; color: #ef4444; font-weight: bold; text-transform: uppercase; margin-bottom: 3px; text-align: center;">🏆 Grand Final (Juara 1)</div>
                 <div id="final-box">
                     <div class="card final-card">
                         <div class="match-header">MATCH: A12</div>
@@ -246,7 +253,7 @@
             </div>
 
             <div style="width: 100%;">
-                <div style="font-size: 8px; color: #f59e0b; font-weight: bold; text-transform: uppercase; margin-bottom: 2px; text-align: center;">🥉 Perebutan Juara 3</div>
+                <div style="font-size: 9px; color: #f59e0b; font-weight: bold; text-transform: uppercase; margin-bottom: 3px; text-align: center;">🥉 Perebutan Juara 3</div>
                 <div id="third-box">
                     <div class="card third-card">
                         <div class="match-header">MATCH: B12</div>
@@ -257,7 +264,7 @@
             </div>
         </div>
 
-        <!-- KOLOM 6: SEMIFINAL KANAN (B11)[cite: 10] -->
+        <!-- KOLOM 6: SEMIFINAL KANAN (B11) -->
         <div>
             <div class="col-header">Semifinal</div>
             <div class="col-group" style="justify-content: center;">
@@ -265,7 +272,7 @@
             </div>
         </div>
 
-        <!-- KOLOM 7: A10, B10[cite: 10] -->
+        <!-- KOLOM 7: A10, B10 -->
         <div>
             <div class="col-header">Quarter Final</div>
             <div class="col-group" style="justify-content: space-around;">
@@ -274,7 +281,7 @@
             </div>
         </div>
 
-        <!-- KOLOM 8: A6, A8, B6, B8[cite: 10] -->
+        <!-- KOLOM 8: A6, A8, B6, B8 -->
         <div>
             <div class="col-header">Round 16</div>
             <div class="col-group">
@@ -285,7 +292,7 @@
             </div>
         </div>
 
-        <!-- KOLOM 9 (SISI KANAN PALING LUAR): A2, A4, B2, B4[cite: 10] -->
+        <!-- KOLOM 9 (KANAN PALING LUAR): A2, A4, B2, B4 -->
         <div>
             <div class="col-header">Round 24</div>
             <div class="col-group">
@@ -336,7 +343,7 @@
                                 <span>${timB}</span>
                                 <b>${skorB}</b>
                             </div>
-                            <div style="font-size: 7px; margin-top: 1px; color: #38bdf8; text-align: center;">
+                            <div style="font-size: 8px; margin-top: 2px; color: #38bdf8; text-align: center; font-weight: 600;">
                                 ${timMenang ? 'Menang: ' + timMenang : 'Belum Selesai'}
                             </div>
                         </div>
