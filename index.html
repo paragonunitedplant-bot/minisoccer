@@ -16,24 +16,26 @@
             background-blend-mode: overlay;
             color: #ffffff;
             margin: 0;
-            padding: 15px 20px;
+            padding: 10px 15px;
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
-        /* Top Header ala Turnamen */
+
         .top-header {
             background: rgba(15, 23, 42, 0.85);
             border-bottom: 3px solid #ef4444;
-            padding: 12px 25px;
+            padding: 10px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-radius: 8px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            margin-bottom: 15px;
         }
         .top-header h2 {
             margin: 0;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             letter-spacing: 1px;
             text-transform: uppercase;
             color: #f8fafc;
@@ -41,45 +43,39 @@
         .live-badge {
             background: #ef4444;
             color: white;
-            padding: 4px 12px;
+            padding: 3px 10px;
             border-radius: 4px;
             font-weight: bold;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
+            font-size: 0.8rem;
             animation: pulse 1.5s infinite;
         }
         @keyframes pulse {
             0% { opacity: 1; }
-            50% { opacity: 0.6; }
+            50% { opacity: 0.5; }
             100% { opacity: 1; }
         }
 
-        /* Sub-Header Turnamen */
-        .sub-header {
+        .sub-title {
             text-align: center;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 8px;
-            border-radius: 6px;
-            margin-bottom: 25px;
-            font-size: 0.95rem;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            font-weight: 700;
             color: #38bdf8;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
         }
 
-        /* Layout Utama 9 Kolom (Sisi Kiri: A, Tengah: Final, Sisi Kanan: B) */
+        /* Layout Grid 9 Kolom Presisi */
         .bracket-wrapper {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr 280px 1fr 1fr 1fr 1fr;
-            gap: 10px;
+            grid-template-columns: 1fr 1fr 1fr 120px 260px 120px 1fr 1fr 1fr;
+            gap: 12px;
             align-items: center;
+            width: 100%;
             max-width: 1650px;
             margin: 0 auto;
         }
 
-        /* Header Kolom Tahapan */
         .col-header {
             text-align: center;
             font-size: 9px;
@@ -87,27 +83,26 @@
             text-transform: uppercase;
             color: #94a3b8;
             background: rgba(15, 23, 42, 0.7);
-            padding: 6px 2px;
+            padding: 5px 2px;
             border-radius: 4px;
             border: 1px solid rgba(255, 255, 255, 0.05);
-            margin-bottom: 10px;
-            letter-spacing: 0.5px;
+            margin-bottom: 8px;
         }
 
         .col-group {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
             justify-content: space-around;
-            min-height: 520px;
+            min-height: 480px;
         }
 
-        /* Kotak Pertandingan */
+        /* Desain Kotak Match */
         .card {
-            background: rgba(30, 41, 59, 0.9);
+            background: rgba(30, 41, 59, 0.95);
             border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 6px;
-            padding: 6px 8px;
+            padding: 6px 10px;
             width: 100%;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
         }
@@ -122,7 +117,7 @@
         .match-header {
             font-size: 8px;
             color: #94a3b8;
-            margin-bottom: 3px;
+            margin-bottom: 2px;
             text-transform: uppercase;
             font-weight: 700;
         }
@@ -142,107 +137,105 @@
             background: rgba(6, 78, 59, 0.6);
         }
 
-        /* Center Stage (Kotak Tengah Grand Final & Juara 3) */
+        /* Area Tengah (Final, Juara 3, Semifinal A11 & B11) */
         .center-stage {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 12px;
             justify-content: center;
             align-items: center;
-            background: rgba(15, 23, 42, 0.8);
-            padding: 15px 12px;
+            background: rgba(15, 23, 42, 0.85);
+            padding: 12px;
             border-radius: 10px;
             border: 1px solid rgba(56, 189, 248, 0.3);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.6);
-            min-height: 520px;
+            min-height: 480px;
         }
 
-        /* Top Scorer di Bawah */
+        /* Top Scorer */
         .top-scorer-box {
             width: 100%;
-            max-width: 420px;
-            margin: 30px auto 10px auto;
+            max-width: 380px;
+            margin: 10px auto 5px auto;
             background: rgba(30, 41, 59, 0.9);
             backdrop-filter: blur(6px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 12px 20px;
-            border-radius: 10px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+            padding: 8px 15px;
+            border-radius: 8px;
         }
         .top-scorer-box h2 {
             color: #34d399;
             text-transform: uppercase;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             text-align: center;
             border-bottom: 1px solid #374151;
-            padding-bottom: 6px;
-            margin: 0 0 8px 0;
+            padding-bottom: 4px;
+            margin: 0 0 6px 0;
         }
         .scorer-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 5px 0;
+            padding: 3px 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            font-size: 12px;
+            font-size: 11px;
         }
-        .scorer-row:last-child {
-            border-bottom: none;
-        }
+        .scorer-row:last-child { border-bottom: none; }
     </style>
 </head>
 <body>
 
-    <!-- Header Atas -->
     <div class="top-header">
-        <h2>🏆 Sport Community Cup Plant - 2026</h2>
+        <h2>🏆 SPORT COMMUNITY CUP PLANT - 2026</h2>
         <div class="live-badge">● LIVE</div>
     </div>
 
-    <div class="sub-header">
-        MINI SOCCER TOURNAMENT - MAIN BRACKET
-    </div>
+    <div class="sub-title">MINI SOCCER TOURNAMENT - MAIN BRACKET</div>
 
-    <!-- Layout Bagan 9 Kolom Presisi -->
     <div class="bracket-wrapper">
         
-        <!-- === SISI KIRI (COURT A) === -->
-        <!-- Kolom 1: Round 24 (A1-A4) -->
+        <!-- KOLOM 1 (SISI KIRI PALING LUAR): A1, A3, B1, B3[cite: 10] -->
         <div>
             <div class="col-header">Round 24</div>
             <div class="col-group">
-                <div id="q-r24-a1"></div><div id="q-r24-a2"></div><div id="q-r24-b1"></div><div id="q-r24-b2"></div>
+                <div id="match-A1"></div>
+                <div id="match-A3"></div>
+                <div id="match-B1"></div>
+                <div id="match-B3"></div>
             </div>
         </div>
 
-        <!-- Kolom 2: Round 16 (A5-A8) -->
+        <!-- KOLOM 2: A5, A7, B5, B7[cite: 10] -->
         <div>
             <div class="col-header">Round 16</div>
             <div class="col-group">
-                <div id="a-r16-5"></div><div id="a-r16-6"></div><div id="a-r16-7"></div><div id="a-r16-8"></div>
+                <div id="match-A5"></div>
+                <div id="match-A7"></div>
+                <div id="match-B5"></div>
+                <div id="match-B7"></div>
             </div>
         </div>
 
-        <!-- Kolom 3: Quarter Final (A9-A10) -->
+        <!-- KOLOM 3: A9, B9[cite: 10] -->
         <div>
             <div class="col-header">Quarter Final</div>
             <div class="col-group" style="justify-content: space-around;">
-                <div id="a-qf-9"></div><div id="a-qf-10"></div>
+                <div id="match-A9"></div>
+                <div id="match-B9"></div>
             </div>
         </div>
 
-        <!-- Kolom 4: Semifinal A (A11) -->
+        <!-- KOLOM 4: SEMIFINAL KIRI (A11)[cite: 10] -->
         <div>
             <div class="col-header">Semifinal</div>
             <div class="col-group" style="justify-content: center;">
-                <div id="a-sf-11"></div>
+                <div id="match-A11"></div>
             </div>
         </div>
 
-        <!-- === TENGAH: GRAND FINAL & JUARA 3 === -->
+        <!-- KOLOM TENGAH: GRAND FINAL (A12) & JUARA 3 (B12)[cite: 10] -->
         <div class="center-stage">
             <div style="width: 100%;">
-                <div style="font-size: 9px; color: #ef4444; font-weight: bold; text-transform: uppercase; margin-bottom: 4px; text-align: center;">🏆 Grand Final (Juara 1)</div>
+                <div style="font-size: 8px; color: #ef4444; font-weight: bold; text-transform: uppercase; margin-bottom: 2px; text-align: center;">🏆 Grand Final (Juara 1)</div>
                 <div id="final-box">
                     <div class="card final-card">
                         <div class="match-header">MATCH: A12</div>
@@ -253,7 +246,7 @@
             </div>
 
             <div style="width: 100%;">
-                <div style="font-size: 9px; color: #f59e0b; font-weight: bold; text-transform: uppercase; margin-bottom: 4px; text-align: center;">🥉 Perebutan Juara 3</div>
+                <div style="font-size: 8px; color: #f59e0b; font-weight: bold; text-transform: uppercase; margin-bottom: 2px; text-align: center;">🥉 Perebutan Juara 3</div>
                 <div id="third-box">
                     <div class="card third-card">
                         <div class="match-header">MATCH: B12</div>
@@ -264,46 +257,52 @@
             </div>
         </div>
 
-        <!-- === SISI KANAN (COURT B) === -->
-        <!-- Kolom 6: Semifinal B (B11) -->
+        <!-- KOLOM 6: SEMIFINAL KANAN (B11)[cite: 10] -->
         <div>
             <div class="col-header">Semifinal</div>
             <div class="col-group" style="justify-content: center;">
-                <div id="b-sf-11"></div>
+                <div id="match-B11"></div>
             </div>
         </div>
 
-        <!-- Kolom 7: Quarter Final (B9-B10) -->
+        <!-- KOLOM 7: A10, B10[cite: 10] -->
         <div>
             <div class="col-header">Quarter Final</div>
             <div class="col-group" style="justify-content: space-around;">
-                <div id="b-qf-9"></div><div id="b-qf-10"></div>
+                <div id="match-A10"></div>
+                <div id="match-B10"></div>
             </div>
         </div>
 
-        <!-- Kolom 8: Round 16 (B5-B8) -->
+        <!-- KOLOM 8: A6, A8, B6, B8[cite: 10] -->
         <div>
             <div class="col-header">Round 16</div>
             <div class="col-group">
-                <div id="b-r16-5"></div><div id="b-r16-6"></div><div id="b-r16-7"></div><div id="b-r16-8"></div>
+                <div id="match-A6"></div>
+                <div id="match-A8"></div>
+                <div id="match-B6"></div>
+                <div id="match-B8"></div>
             </div>
         </div>
 
-        <!-- Kolom 9: Round 24 (B1-B4) -->
+        <!-- KOLOM 9 (SISI KANAN PALING LUAR): A2, A4, B2, B4[cite: 10] -->
         <div>
             <div class="col-header">Round 24</div>
             <div class="col-group">
-                <div id="b-r24-1"></div><div id="b-r24-2"></div><div id="b-r24-3"></div><div id="b-r24-4"></div>
+                <div id="match-A2"></div>
+                <div id="match-A4"></div>
+                <div id="match-B2"></div>
+                <div id="match-B4"></div>
             </div>
         </div>
 
     </div>
 
-    <!-- Top Scorer -->
+    <!-- Top Scorer Box -->
     <div class="top-scorer-box">
         <h2>🔥 Top Scorer</h2>
         <div id="scorer-container">
-            <p style="text-align: center; color: #94a3b8; font-size: 12px; margin: 5px 0;">Memuat data top scorer...</p>
+            <p style="text-align: center; color: #94a3b8; font-size: 11px; margin: 3px 0;">Memuat data top scorer...</p>
         </div>
     </div>
 
@@ -316,7 +315,7 @@
                 let data = await response.json();
                 
                 data.pertandingan.forEach(match => {
-                    let idMatch = (match.ID_Match || "").toUpperCase();
+                    let idMatch = (match.ID_Match || "").toUpperCase().trim();
                     let timA = match.Tim_A || 'TBD';
                     let timB = match.Tim_B || 'TBD';
                     let skorA = match.Live_Skor_A !== undefined ? match.Live_Skor_A : 0;
@@ -337,7 +336,7 @@
                                 <span>${timB}</span>
                                 <b>${skorB}</b>
                             </div>
-                            <div style="font-size: 8px; margin-top: 2px; color: #38bdf8; text-align: center;">
+                            <div style="font-size: 7px; margin-top: 1px; color: #38bdf8; text-align: center;">
                                 ${timMenang ? 'Menang: ' + timMenang : 'Belum Selesai'}
                             </div>
                         </div>
@@ -352,23 +351,15 @@
                         return;
                     }
 
-                    let prefix = idMatch.startsWith("A") ? "a" : (idMatch.startsWith("B") ? "b" : "");
-                    if (prefix) {
-                        let num = parseInt(idMatch.replace(prefix.toUpperCase(), "")) || 0;
-                        let targetId = "";
-                        if (num >= 1 && num <= 4) targetId = `${prefix}-r24-${num}`;
-                        else if (num >= 5 && num <= 8) targetId = `${prefix}-r16-${num}`;
-                        else if (num === 9 || num === 10) targetId = `${prefix}-qf-${num}`;
-                        else if (num === 11) targetId = `${prefix}-sf-11`;
-
-                        let el = document.getElementById(targetId);
-                        if (el) el.innerHTML = cardHTML;
+                    let targetEl = document.getElementById("match-" + idMatch);
+                    if (targetEl) {
+                        targetEl.innerHTML = cardHTML;
                     }
                 });
 
                 let scorerHTML = "";
                 if(data.top_scorer.length === 0) {
-                    scorerHTML = "<p style='text-align:center; color: #94a3b8; font-size: 12px; margin: 5px 0;'>Belum ada gol tercatat.</p>";
+                    scorerHTML = "<p style='text-align:center; color: #94a3b8; font-size: 11px; margin: 3px 0;'>Belum ada gol tercatat.</p>";
                 } else {
                     data.top_scorer.forEach(s => {
                         scorerHTML += `
