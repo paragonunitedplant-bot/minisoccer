@@ -66,14 +66,14 @@
             margin-bottom: 8px;
         }
 
-        /* Layout Grid 9 Kolom Melebar Maksimal Kanan-Kiri */
+        /* Layout Grid 9 Kolom dengan Lebar Semifinal yang Seimbang */
         .bracket-wrapper {
             display: grid;
-            grid-template-columns: repeat(3, 1fr) 130px 270px 130px repeat(3, 1fr);
-            gap: 8px;
+            grid-template-columns: repeat(3, 1fr) 1fr 270px 1fr repeat(3, 1fr);
+            gap: 10px;
             align-items: center;
             width: 100%;
-            max-width: 98vw; /* Memenuhi layar kanan & kiri */
+            max-width: 98vw;
             margin: 0 auto;
         }
 
@@ -99,7 +99,7 @@
             min-height: 500px;
         }
 
-        /* Desain Kotak Match dengan Font Lebih Besar */
+        /* Desain Kotak Match */
         .card {
             background: rgba(30, 41, 59, 0.95);
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -132,10 +132,10 @@
             margin-bottom: 3px;
             border-radius: 4px;
             font-weight: 700;
-            font-size: 13px; /* Teks nama tim diperbesar */
+            font-size: 13px;
         }
         .team-row b {
-            font-size: 14px; /* Angka skor diperbesar */
+            font-size: 14px;
             color: #ffffff;
         }
         .winner {
@@ -143,7 +143,7 @@
             background: rgba(6, 78, 59, 0.7);
         }
 
-        /* Area Tengah (Final, Juara 3, Semifinal A11 & B11) */
+        /* Area Tengah (Final & Juara 3) */
         .center-stage {
             display: flex;
             flex-direction: column;
@@ -200,7 +200,7 @@
 
     <div class="bracket-wrapper">
         
-        <!-- KOLOM 1 (KIRI PALING LUAR): A1, A3, B1, B3 -->
+        <!-- KOLOM 1: A1, A3, B1, B3 -->
         <div>
             <div class="col-header">Round 24</div>
             <div class="col-group">
@@ -292,7 +292,7 @@
             </div>
         </div>
 
-        <!-- KOLOM 9 (KANAN PALING LUAR): A2, A4, B2, B4 -->
+        <!-- KOLOM 9: A2, A4, B2, B4 -->
         <div>
             <div class="col-header">Round 24</div>
             <div class="col-group">
