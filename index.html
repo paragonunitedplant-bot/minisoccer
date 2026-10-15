@@ -202,52 +202,69 @@
         }
         .scorer-row:last-child { border-bottom: none; }
         /* --- TARUH KODE RESPONSIVE HP DI SINI --- */
-        @media screen and (max-width: 768px) {
+       @media screen and (max-width: 768px) {
+    /* 1. Pengaturan Kontainer Scroll Horizontal */
     .bracket-wrapper {
-        width: 100%;
-        overflow-x: auto;
-        overflow-y: hidden;
-        -webkit-overflow-scrolling: touch;
-        white-space: nowrap;
-        padding-bottom: 15px;
+        width: 100% !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        -webkit-overflow-scrolling: touch !important;
+        white-space: nowrap !important;
+        padding-bottom: 15px !important;
     }
 
     .bracket-grid {
-        min-width: 1350px;
+        min-width: 1350px !important;
     }
-    /* Targetkan center-stage atau kolom tengah agar lebarnya disamakan */
+
+    /* 2. Menyamakan Ukuran Semua Card (Babak Awal, Perempat Final, Semifinal) */
+    .card {
+        width: 140px !important;
+        min-width: 140px !important;
+        max-width: 140px !important;
+        box-sizing: border-box !important;
+        padding: 4px 6px !important;
+    }
+
+    /* 3. Menyesuaikan Ukuran Teks & Komponen di dalam Card */
+    .team-row {
+        font-size: 11px !important;
+        padding: 3px 5px !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+
+    .team-row span {
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        max-width: 70px !important;
+        display: inline-block !important;
+    }
+
+    .team-logo {
+        width: 14px !important;
+        height: 14px !important;
+        flex-shrink: 0 !important;
+    }
+
+    .match-header {
+        font-size: 8px !important;
+    }
+
+    /* 4. Mengecilkan Grand Final & Juara 3 Agar Sama Ukurannya dengan Card Lain */
+    #match-A12,
+    #match-B12,
+    #match-A12 .card,
+    #match-B12 .card,
     .center-stage,
-    .center-column,
     .grand-final-wrapper {
         width: 140px !important;
         min-width: 140px !important;
         max-width: 140px !important;
+        box-sizing: border-box !important;
         margin: 0 auto !important;
-    }
-
-    /* Pastikan card di dalam center-stage ikut mengecil normal */
-    .center-stage .card,
-    .center-column .card,
-    .grand-final-wrapper .card {
-        width: 140px !important;
-        min-width: 140px !important;
-        max-width: 140px !important;
-    }
-    /* Samakan ukuran card Grand Final & 3rd Place agar tidak terlalu besar */
-    .card-grandfinal,
-    .card-thirdplace,
-    #match-A12,
-    #match-B12 {
-        width: 140px !important;
-        min-width: 140px !important;
-        max-width: 140px !important;
-        font-size: 11px !important;
-    }
-
-    /* Sesuaikan juga kotak pembungkus khususnya jika ada */
-    .grand-final-box, 
-    .third-place-box {
-        width: 150px !important;
     }
 }
     </style>
