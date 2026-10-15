@@ -215,7 +215,24 @@
     .bracket-grid {
         min-width: 1350px;
     }
+    /* Targetkan center-stage atau kolom tengah agar lebarnya disamakan */
+    .center-stage,
+    .center-column,
+    .grand-final-wrapper {
+        width: 140px !important;
+        min-width: 140px !important;
+        max-width: 140px !important;
+        margin: 0 auto !important;
+    }
 
+    /* Pastikan card di dalam center-stage ikut mengecil normal */
+    .center-stage .card,
+    .center-column .card,
+    .grand-final-wrapper .card {
+        width: 140px !important;
+        min-width: 140px !important;
+        max-width: 140px !important;
+    }
     /* Samakan ukuran card Grand Final & 3rd Place agar tidak terlalu besar */
     .card-grandfinal,
     .card-thirdplace,
