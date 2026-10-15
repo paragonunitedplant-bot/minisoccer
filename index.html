@@ -213,21 +213,36 @@
             }
 
             .bracket-grid {
-                min-width: 1350px;
+                display: grid;
+                grid-template-columns: repeat (9, 150px) !important;
+                gap: 15px;
+                min-width: 1500px !important;
+            }
+
+            .col-header{
+                widht: 150px !important;
+                text-align: center;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipis;
+                font-size: 10px;
             }
 
             .card {
                 padding: 4px 6px !important;
-                widht: 140px !important;
-                min-widht: 140px !important;
-                max-widht: 140px !important;
-                flex: 0 0 140px !important;
+                widht: 150px !important;
+                min-widht: 150px !important;
+                max-widht: 150px !important;
+                flex: 0 0 150px !important;
                 box-sizzing: border-box !important;
             }
 
             .team-row {
                 font-size: 11px;
                 padding: 3px 5px;
+                display: fex;
+                justify-content: space-between;
+                align-items: center;
             }
 
             .team-row span {
