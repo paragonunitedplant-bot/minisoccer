@@ -215,6 +215,23 @@
     .bracket-grid {
         min-width: 1350px;
     }
+
+    /* Mengecilkan lebar kolom khusus Semifinal, Final, dan 3rd Place di tengah */
+    .bracket-grid > div:nth-child(4),
+    .bracket-grid > div:nth-child(5),
+    .bracket-grid > div:nth-child(6) {
+        min-width: 110px !important;
+        width: 110px !important;
+    }
+
+    /* Menyesuaikan ukuran card yang ada di kolom tengah tersebut */
+    .bracket-grid > div:nth-child(4) .card,
+    .bracket-grid > div:nth-child(5) .card,
+    .bracket-grid > div:nth-child(6) .card {
+        width: 100px !important;
+        min-width: 100px !important;
+        max-width: 100px !important;
+    }
 }
     </style>
 </head>
