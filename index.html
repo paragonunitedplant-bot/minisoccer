@@ -203,9 +203,12 @@
         .scorer-row:last-child { border-bottom: none; }
         /* --- TARUH KODE RESPONSIVE HP DI SINI --- */
         @media screen and (max-width: 768px) {
-            .bracket-container {
+            .bracket-wrapper {
+                width: 100%;
                 overflow-x: auto;
+                overflow-y: hidden;
                 -webkit-overflow-scrolling: touch;
+                white-space: nowrap;
                 padding-bottom: 15px;
             }
 
@@ -432,7 +435,7 @@
         setInterval(fetchData, 10000);
         /* --- TARUH KODE DI SINI --- */
         window.addEventListener('load', () => {
-            const container = document.querySelector('.bracket-container');
+            const container = document.querySelector('.bracket-wrapper');
             if (container && window.innerWidth <= 768) {
                 container.scrollLeft = (container.scrollWidth - container.clientWidth) / 2;
             }
