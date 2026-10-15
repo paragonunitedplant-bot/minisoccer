@@ -203,77 +203,19 @@
         .scorer-row:last-child { border-bottom: none; }
         /* --- TARUH KODE RESPONSIVE HP DI SINI --- */
         @media screen and (max-width: 768px) {
-    /* 1. Kunci pembungkus scroll utama */
-        .bracket-wrapper {
-            width: 100% !important;
-            overflow-x: auto !important;
-            overflow-y: hidden !important;
-            -webkit-overflow-scrolling: touch !important;
-            display: block !important;
-        }
-
-    /* 2. Kunci grid utama agar tiap kolom lebarnya persis sama */
-        .bracket-grid {
-            display: grid !important;
-            grid-template-columns: repeat(9, 140px) !important; /* Paksa 9 kolom masing-masing 140px */
-            gap: 12px !important;
-            min-width: 1360px !important;
-            width: 1360px !important;
-        }
-
-    /* 3. Kunci header judul kolom (QUARTER FINAL, SEMIFINAL, dll) */
-        .col-header {
-            width: 140px !important;
-            max-width: 140px !important;
-            box-sizing: border-box !important;
-            text-align: center !important;
-            font-size: 10px !important;
-            white-space: nowrap !important;
-            overflow: hidden !important;
-            text-overflow: ellipsis !important;
-        }
-
-    /* 4. KUNCI MATI UKURAN KARTU MATCH (CARD) */
-        .card {
-            width: 140px !important;
-            min-width: 140px !important;
-            max-width: 140px !important;
-            box-sizing: border-box !important;
-            padding: 4px 6px !important;
-            margin: 0 auto !important;
-        }
-
-    /* 5. Cegah elemen isi tim memanjangkan kartu */
-        .team-row {
-            width: 100% !important;
-            box-sizing: border-box !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: space-between !important;
-            font-size: 11px !important;
-            padding: 2px 4px !important;
-            overflow: hidden !important;
-        }
-
-    /* Potong nama tim yang kepanjangan */
-        .team-row span {
-            white-space: nowrap !important;
-            overflow: hidden !important;
-            text-overflow: ellipsis !important;
-            max-width: 65px !important;
-            display: inline-block !important;
-        }
-
-        .team-logo {
-            width: 14px !important;
-            height: 14px !important;
-            flex-shrink: 0 !important;
-        }
-
-        .match-header {
-            font-size: 8px !important;
-        }
+    .bracket-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+        padding-bottom: 15px;
     }
+
+    .bracket-grid {
+        min-width: 1350px;
+    }
+}
     </style>
 </head>
 <body>
