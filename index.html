@@ -409,11 +409,46 @@
     <script>
         const API_URL = "https://script.google.com/macros/s/AKfycbw4VUx2BrymlZynUeOsQrntqkIEA-49nuIw8fZCw1tE2HKPWETyEneGYtiWw98qfABX5A/exec";
 
+        // --- TARUH DI SINI (SEBELUM FETCHDATA) ---
+        const teamJerseyColors = {
+            "UPSTREAM LIQUID A": "#1e3a8a",   // Biru tua
+            "SERIGALA UNITED": "#b91c1c",     // Merah
+            "POWDER FACTORY C": "#047857",    // Hijau
+            "FACILITY SERVICE": "#d97706",    // Kuning/Oranye
+            "NDC A": "#6d28d9",               // Ungu
+            "FACTORY POWDER B": "#0ea5e9",    // Biru muda
+            "UPSTREAM SEMSOL A": "#4b5563",   // Abu-abu gelap
+            "UPSTREAM LIQUID C": "#14b8a6",   // Toska
+            "POWDER FACTORY A": "#e11d48",    // Pink/Merah muda
+            "FLAWLESS ERENDI": "#7c2d12",     // Cokelat
+            "AL NASHRI": "#1e293b",           // Hitam/Navy
+            "MACAN ATEL": "#ca8a04",          // Gold
+            "NDC C": "#84cc16",               // Hijau terang
+            "RAW MATERIAL FC": "#9333ea",     // Ungu terang
+            "AMAZON": "#0d9488",              // Hijau teal
+            "CREM": "#f97316",                // Oranye
+            "NDC B": "#3b82f6",               // Biru
+            "DOWNSTREAM SEMSOL B": "#db2777", // Magenta
+            "DOWNSTREAM SEMSOL A": "#65a30d", // Hijau lime
+            "GASGAS FC": "#ea580c",           // Oranye gelap
+            "REMAKO FC": "#52525b",           // Abu-abu
+            "DOWNSTREAM LIQUID B": "#0284c7", // Biru cerah
+            "UPSTREAM SEMSOL B": "#7e22ce",   // Ungu tua
+            "POWDER FACTORY D": "#15803d"     // Hijau tua
+        };
+
+        function getJerseyColor(teamName) {
+            if (!teamName || teamName.toUpperCase() === 'TBD') {
+                return 'rgba(114, 106, 106, 0.9)'; 
+            }
+            return teamJerseyColors[teamName.trim()] || 'rgba(75, 85, 99, 0.9)';
+        }
+        //-------------------------------------------
         async function fetchData() {
             try {
                 let response = await fetch(API_URL);
                 let data = await response.json();
-                
+        
                 data.pertandingan.forEach(match => {
                     let idMatch = (match.ID_Match || "").toUpperCase().trim();
                     let timA = match.Tim_A || 'TBD';
@@ -424,26 +459,33 @@
 
                     let isTeamATBD = (timA.toUpperCase() === 'TBD' || timA === '');
                     let isTeamBTBD = (timB.toUpperCase() === 'TBD' || timB === '');
-    
-                      // UBAHAN DISINI: Jika ID-nya A12 atau B12, paksa isCardTBD jadi false (tidak berubah warna TBD)
                     let isCardTBD = (idMatch === 'A12' || idMatch === 'B12') ? false : (isTeamATBD && isTeamBTBD);
-                    let isATBDClass = (idMatch === 'A12' || idMatch === 'B12') ? false : isTeamATBD;
-                    let isBTBDClass = (idMatch === 'A12' || idMatch === 'B12') ? false : isTeamBTBD;
-
+    
                     let isTeamAWin = timMenang === timA;
                     let isTeamBWin = timMenang === timB;
+
+                    // --- AMBIL WARNA JERSEY SESUAI NAMA TIM ---
+                    let bgTeamA = getJerseyColor(timA);
+                    let bgTeamB = getJerseyColor(timB);
+
+                    // Jika tim menang, warna bisa ditimpa jadi merah penanda menang atau tetap warna jersey
+                    let rowStyleA = isTeamAWin ? 'background: rgba(254, 27, 10, 0.9); border-left: 4px solid #420511;' : `background: ${bgTeamA};`;
+                    let rowStyleB = isTeamBWin ? 'background: rgba(254, 27, 10, 0.9); border-left: 4px solid #420511;' : `background: ${bgTeamB};`;
 
                     let cardHTML = `
                         <div class="card ${idMatch === 'A12' ? 'final-card' : (idMatch === 'B12' ? 'third-card' : '')} ${isCardTBD ? 'tbd-card' : ''}">
                             <div class="match-header">Match: ${match.ID_Match}</div>
-                            <div class="team-row ${isATBDClass ? 'tbd-row' : (isTeamAWin ? 'winner' : '')}">
+                    
+                            <div class="team-row" style="${rowStyleA}">
                                 <span>${timA}</span>
                                 <b>${skorA}</b>
                             </div>
-                            <div class="team-row ${isBTBDClass ? 'tbd-row' : (isTeamBWin ? 'winner' : '')}">
+                    
+                            <div class="team-row" style="${rowStyleB}">
                                 <span>${timB}</span>
                                 <b>${skorB}</b>
                             </div>
+                    
                             <div style="font-size: 10px; margin-top: 1px; color: ${idMatch === 'B12' ? '#ffffff' : '#000000'}; text-align: center; font-weight: 600;">
                                 ${timMenang ? 'Menang: ' + timMenang : 'Belum Selesai'}
                             </div>
@@ -461,7 +503,7 @@
                         }
                     }
                 });
-
+ 
                 let scorerHTML = "";
                 if(data.top_scorer.length === 0) {
                     scorerHTML = "<p style='text-align:center; color: #94a3b8; font-size: 11px; margin: 3px 0;'>Belum ada gol tercatat.</p>";
