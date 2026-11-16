@@ -437,6 +437,24 @@
             "POWDER FACTORY D": "#15803d"     // Hijau tua
         };
 
+        // Kamus warna teks khusus per tim (sesuaikan jika ada yang ingin diatur manual)
+        const teamTextColors = {
+            "UPSTREAM LIQUID A": "#ffffff",   // Putih
+            "SERIGALA UNITED": "#ffffff",     // Putih
+            "POWDER FACTORY C": "#ffffff",    // Putih
+            "FACILITY SERVICE": "#000000",    // Hitam (karena background terang)
+            // Tim lainnya bisa ditambahkan di sini sesuai kebutuhan
+        };
+
+        // Fungsi untuk mengambil warna teks berdasarkan nama tim
+        function getTextColor(teamName) {
+            if (!teamName || teamName.toUpperCase() === 'TBD') {
+                return '#e7e7e7'; // Warna teks untuk TBD
+            }
+            // Jika ada di kamus, pakai warna itu. Jika tidak, otomatis gunakan putih (#ffffff) atau hitam (#000000)
+            return teamTextColors[teamName.trim()] || '#ffffff'; 
+        }
+
         function getJerseyColor(teamName) {
             if (!teamName || teamName.toUpperCase() === 'TBD') {
                 return 'rgba(114, 106, 106, 0.9)'; 
@@ -487,19 +505,27 @@
 
                     let rowStyleA = `background: ${bgTeamA};`;
                     let rowStyleB = `background: ${bgTeamB};`;
+
+                    // --- TENTUKAN WARNA TEKS DARI KAMUS MANUAL ---
+                    let textColorA = isTeamATBD ? '#e7e7e7' : getTextColor(timA);
+                    let textColorB = isTeamBTBD ? '#e7e7e7' : getTextColor(timB);
+
+                    // Jika tim kalah (berubah jadi merah), paksa teks jadi putih agar tetap jelas terbaca
+                    if (isTeamALose) textColorA = '#ffffff';
+                    if (isTeamBLose) textColorB = '#ffffff';
                     
                     let cardHTML = `
                         <div class="card ${idMatch === 'A12' ? 'final-card' : (idMatch === 'B12' ? 'third-card' : '')} ${isCardTBD ? 'tbd-card' : ''}">
                             <div class="match-header">Match: ${match.ID_Match}</div>
                     
-                            <div class="team-row" style="${rowStyleA}">
-                                <span>${timA}</span>
-                                <b>${skorA}</b>
+                            <div class="team-row" style="${rowStyleA}; color: ${textColorA};">
+                                <span style="color: ${textColorA};">${timA}</span>
+                                <b style="color: ${textColorA};">${skorA}</b>
                             </div>
                     
-                            <div class="team-row" style="${rowStyleB}">
-                                <span>${timB}</span>
-                                <b>${skorB}</b>
+                            <div class="team-row" style="${rowStyleB}; color: ${textColorB};">
+                                <span style="color: ${textColorB};">${timB}</span>
+                                <b style="color: ${textColorB};">${skorB}</b>
                             </div>
                     
                             <div style="font-size: 10px; margin-top: 1px; color: ${idMatch === 'B12' ? '#ffffff' : '#000000'}; text-align: center; font-weight: 600;">
