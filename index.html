@@ -441,13 +441,13 @@
                     let isTeamBWin = timMenang === timB;
 
                     let cardHTML = `
-                        <div class="card ${idMatch === 'A12' ? 'final-card' : (idMatch === 'B12' ? 'third-card' : '')}">
+                        <div class="card ${idMatch === 'A12' ? 'final-card' : (idMatch === 'B12' ? 'third-card' : '')} ${isCardTBD ? 'tbd-card' : ''}">
                             <div class="match-header">Match: ${match.ID_Match}</div>
-                            <div class="team-row ${isTeamAWin ? 'winner' : ''}">
+                            <div class="team-row ${isTeamAWin ? 'tbd-row' : (isTeamAWin ? 'winner' : ''}">
                                 <span>${timA}</span>
                                 <b>${skorA}</b>
                             </div>
-                            <div class="team-row ${isTeamBWin ? 'winner' : ''}">
+                            <div class="team-row ${isTeamBWin ? 'tbd-row' : (isTeamBWin ? 'winner' : ''}">
                                 <span>${timB}</span>
                                 <b>${skorB}</b>
                             </div>
