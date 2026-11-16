@@ -111,6 +111,20 @@
             width: 100%;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
         }
+            /* Styling khusus untuk Card / Box TBD */
+        .card.tbd-card {
+            background: rgba(80, 80, 80, 0.6) !important;
+            border: 1px dashed rgba(255, 255, 255, 0.4) !important;
+        }
+
+        /* Styling khusus untuk Baris Tim yang masih TBD */
+        .team-row.tbd-row {
+            background: rgba(60, 60, 60, 0.8) !important;
+            color: #94a3b8 !important;
+        }
+        .team-row.tbd-row b {
+            color: #94a3b8 !important;
+        }
         .card.final-card {
             border: 2px solid #ccac00;
             background: rgba(204,172,0, 0.85);
@@ -418,6 +432,10 @@
                     let skorA = match.Live_Skor_A !== undefined ? match.Live_Skor_A : 0;
                     let skorB = match.Live_Skor_B !== undefined ? match.Live_Skor_B : 0;
                     let timMenang = match.Tim_Menang || '';
+
+                    let isTeamATBD = (timA.toUpperCase() === 'TBD' || timA === '');
+                    let isTeamBTBD = (timB.toUpperCase() === 'TBD' || timB === '');
+                    let isCardTBD = isTeamATBD && isTeamBTBD; // True jika kedua tim masih TBD
 
                     let isTeamAWin = timMenang === timA;
                     let isTeamBWin = timMenang === timB;
