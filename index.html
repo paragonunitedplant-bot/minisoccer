@@ -459,18 +459,14 @@
 
                     if (idMatch === "A12") {
                         document.getElementById("final-box").innerHTML = cardHTML;
-                        return;
-                    }
-                    if (idMatch === "B12") {
+                    } else if (idMatch === "B12") {
                         document.getElementById("third-box").innerHTML = cardHTML;
-                        return;
+                    } else {
+                        let targetEl = document.getElementById("match-" + idMatch);
+                        if (targetEl) {
+                            targetEl.innerHTML = cardHTML;
+                        }
                     }
-
-                    let targetEl = document.getElementById("match-" + idMatch);
-                    if (targetEl) {
-                        targetEl.innerHTML = cardHTML;
-                    }
-                });
 
                 let scorerHTML = "";
                 if(data.top_scorer.length === 0) {
