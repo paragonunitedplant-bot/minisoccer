@@ -420,19 +420,23 @@
 
                     let isTeamATBD = (timA.toUpperCase() === 'TBD' || timA === '');
                     let isTeamBTBD = (timB.toUpperCase() === 'TBD' || timB === '');
-                    let isCardTBD = isTeamATBD && isTeamBTBD;
+    
+                      // UBAHAN DISINI: Jika ID-nya A12 atau B12, paksa isCardTBD jadi false (tidak berubah warna TBD)
+                    let isCardTBD = (idMatch === 'A12' || idMatch === 'B12') ? false : (isTeamATBD && isTeamBTBD);
+                    let isATBDClass = (idMatch === 'A12' || idMatch === 'B12') ? false : isTeamATBD;
+                    let isBTBDClass = (idMatch === 'A12' || idMatch === 'B12') ? false : isTeamBTBD;
 
                     let isTeamAWin = timMenang === timA;
                     let isTeamBWin = timMenang === timB;
 
                     let cardHTML = `
-                        <div class="card ${idMatch === 'A12' ? 'final-card' : (idMatch === 'B12' ? 'third-card' : '')}">
+                        <div class="card ${idMatch === 'A12' ? 'final-card' : (idMatch === 'B12' ? 'third-card' : '')} ${isCardTBD ? 'tbd-card' : ''}">
                             <div class="match-header">Match: ${match.ID_Match}</div>
-                            <div class="team-row ${isTeamATBD ? 'winner' : '')}">
+                            <div class="team-row ${isATBDClass ? 'tbd-row' : (isTeamAWin ? 'winner' : '')}">
                                 <span>${timA}</span>
                                 <b>${skorA}</b>
                             </div>
-                            <div class="team-row ${isTeamBTBD ? 'winner' : '')}">
+                            <div class="team-row ${isBTBDClass ? 'tbd-row' : (isTeamBWin ? 'winner' : '')}">
                                 <span>${timB}</span>
                                 <b>${skorB}</b>
                             </div>
