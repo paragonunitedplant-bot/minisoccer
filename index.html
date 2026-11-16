@@ -83,7 +83,6 @@
             text-align: center;
             font-size: 11px;
             font-weight: 800;
-            font-shadow: 0 4px 12px rgba(255, 255, 255, 0.5);
             text-transform: uppercase;
             color: #420511;
             background: rgba(255, 255, 255, 0.0);
@@ -111,41 +110,27 @@
             width: 100%;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
         }
-            /* Styling khusus untuk Card / Box TBD */
-        .card.tbd-card {
-            background: rgba(80, 80, 80, 0.6) !important;
-            border: 1px dashed rgba(255, 255, 255, 0.4) !important;
-        }
-
-        /* Styling khusus untuk Baris Tim yang masih TBD */
-        .team-row.tbd-row {
-            background: rgba(60, 60, 60, 0.8) !important;
-            color: #94a3b8 !important;
-        }
-        .team-row.tbd-row b {
-            color: #94a3b8 !important;
-        }
         .card.final-card {
             border: 2px solid #ccac00;
             background: rgba(204,172,0, 0.85);
         }
         .card.final-card .team-row {
-            background: rgba(240, 240, 240, 0.95); /* Warna latar baris tim khusus final jadi lebih terang */
-            color: #111827;                       /* Warna teks jadi gelap supaya jelas */
+            background: rgba(240, 240, 240, 0.95);
+            color: #111827;
         }
         .card.final-card .team-row b {
-            color: #111827;                       /* Warna teks skor di dalam baris tim jadi gelap */
+            color: #111827;
         }
         .card.third-card {
             border: 2px solid #420511;
             background: rgba(66, 5, 17, 0.85);
         }
         .card.third-card .team-row {
-            background: rgba(240, 240, 240, 0.95); /* Warna latar baris tim khusus final jadi lebih terang */
-            color: #111827;                       /* Warna teks jadi gelap supaya jelas */
+            background: rgba(240, 240, 240, 0.95);
+            color: #111827;
         }
         .card.third-card .team-row b {
-            color: #111827;                       /* Warna teks skor di dalam baris tim jadi gelap */
+            color: #111827;
         }
         .card.third-card .match-header {
             font-size: 9px;
@@ -179,6 +164,19 @@
         .winner {
             border-left: 4px solid #420511;
             background: rgba(254, 27, 10, 0.9);
+        }
+
+        /* Styling khusus untuk Card / Box TBD */
+        .card.tbd-card {
+            background: rgba(80, 80, 80, 0.6) !important;
+            border: 1px dashed rgba(255, 255, 255, 0.4) !important;
+        }
+        .team-row.tbd-row {
+            background: rgba(60, 60, 60, 0.8) !important;
+            color: #94a3b8 !important;
+        }
+        .team-row.tbd-row b {
+            color: #94a3b8 !important;
         }
 
         /* Area Tengah (Final & Juara 3) */
@@ -225,72 +223,61 @@
             font-weight: 600;
         }
         .scorer-row:last-child { border-bottom: none; }
-        /* --- TARUH KODE RESPONSIVE HP DI SINI --- */
-       @media screen and (max-width: 768px) {
-    /* 1. Pengaturan Kontainer Scroll Horizontal */
-    .bracket-wrapper {
-        width: 100% !important;
-        overflow-x: auto !important;
-        overflow-y: hidden !important;
-        -webkit-overflow-scrolling: touch !important;
-        white-space: nowrap !important;
-        padding-bottom: 15px !important;
-    }
 
-    .bracket-grid {
-        min-width: 1350px !important;
-    }
-
-    /* 2. Menyamakan Ukuran Semua Card (Babak Awal, Perempat Final, Semifinal) */
-    .card {
-        width: 140px !important;
-        min-width: 140px !important;
-        max-width: 140px !important;
-        box-sizing: border-box !important;
-        padding: 4px 6px !important;
-    }
-
-    /* 3. Menyesuaikan Ukuran Teks & Komponen di dalam Card */
-    .team-row {
-        font-size: 11px !important;
-        padding: 3px 5px !important;
-        display: flex !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-    }
-
-    .team-row span {
-        white-space: nowrap !important;
-        overflow: hidden !important;
-        text-overflow: ellipsis !important;
-        max-width: 70px !important;
-        display: inline-block !important;
-    }
-
-    .team-logo {
-        width: 14px !important;
-        height: 14px !important;
-        flex-shrink: 0 !important;
-    }
-
-    .match-header {
-        font-size: 8px !important;
-    }
-
-    /* 4. Mengecilkan Grand Final & Juara 3 Agar Sama Ukurannya dengan Card Lain */
-    #match-A12,
-    #match-B12,
-    #match-A12 .card,
-    #match-B12 .card,
-    .center-stage,
-    .grand-final-wrapper {
-        width: 140px !important;
-        min-width: 140px !important;
-        max-width: 140px !important;
-        box-sizing: border-box !important;
-        margin: 0 auto !important;
-    }
-}
+        @media screen and (max-width: 768px) {
+            .bracket-wrapper {
+                width: 100% !important;
+                overflow-x: auto !important;
+                overflow-y: hidden !important;
+                -webkit-overflow-scrolling: touch !important;
+                white-space: nowrap !important;
+                padding-bottom: 15px !important;
+            }
+            .bracket-grid {
+                min-width: 1350px !important;
+            }
+            .card {
+                width: 140px !important;
+                min-width: 140px !important;
+                max-width: 140px !important;
+                box-sizing: border-box !important;
+                padding: 4px 6px !important;
+            }
+            .team-row {
+                font-size: 11px !important;
+                padding: 3px 5px !important;
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+            }
+            .team-row span {
+                white-space: nowrap !important;
+                overflow: hidden !important;
+                text-overflow: ellipsis !important;
+                max-width: 70px !important;
+                display: inline-block !important;
+            }
+            .team-logo {
+                width: 14px !important;
+                height: 14px !important;
+                flex-shrink: 0 !important;
+            }
+            .match-header {
+                font-size: 8px !important;
+            }
+            #match-A12,
+            #match-B12,
+            #match-A12 .card,
+            #match-B12 .card,
+            .center-stage,
+            .grand-final-wrapper {
+                width: 140px !important;
+                min-width: 140px !important;
+                max-width: 140px !important;
+                box-sizing: border-box !important;
+                margin: 0 auto !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -303,7 +290,6 @@
     <div class="sub-title">MINI SOCCER TOURNAMENT</div>
 
     <div class="bracket-wrapper">
-        
         <!-- KOLOM 1: A1, A3, B1, B3 -->
         <div>
             <div class="col-header">Round 24</div>
@@ -357,7 +343,7 @@
             </div>
 
             <div style="width: 100%;">
-                <div style="font-size: 13px; color:  #420511; font-weight: bold; text-transform: uppercase; margin-bottom: 3px; text-align: center;">Perebutan Juara 3</div>
+                <div style="font-size: 13px; color: #420511; font-weight: bold; text-transform: uppercase; margin-bottom: 3px; text-align: center;">Perebutan Juara 3</div>
                 <div id="third-box">
                     <div class="card third-card">
                         <div class="match-header">MATCH: B12</div>
@@ -406,7 +392,6 @@
                 <div id="match-B4"></div>
             </div>
         </div>
-
     </div>
 
     <!-- Top Scorer Box -->
@@ -435,7 +420,7 @@
 
                     let isTeamATBD = (timA.toUpperCase() === 'TBD' || timA === '');
                     let isTeamBTBD = (timB.toUpperCase() === 'TBD' || timB === '');
-                    let isCardTBD = isTeamATBD && isTeamBTBD; // True jika kedua tim masih TBD
+                    let isCardTBD = isTeamATBD && isTeamBTBD;
 
                     let isTeamAWin = timMenang === timA;
                     let isTeamBWin = timMenang === timB;
@@ -443,11 +428,11 @@
                     let cardHTML = `
                         <div class="card ${idMatch === 'A12' ? 'final-card' : (idMatch === 'B12' ? 'third-card' : '')} ${isCardTBD ? 'tbd-card' : ''}">
                             <div class="match-header">Match: ${match.ID_Match}</div>
-                            <div class="team-row ${isTeamAWin ? 'tbd-row' : (isTeamAWin ? 'winner' : ''}">
+                            <div class="team-row ${isTeamATBD ? 'tbd-row' : (isTeamAWin ? 'winner' : '')}">
                                 <span>${timA}</span>
                                 <b>${skorA}</b>
                             </div>
-                            <div class="team-row ${isTeamBWin ? 'tbd-row' : (isTeamBWin ? 'winner' : ''}">
+                            <div class="team-row ${isTeamBTBD ? 'tbd-row' : (isTeamBWin ? 'winner' : '')}">
                                 <span>${timB}</span>
                                 <b>${skorB}</b>
                             </div>
@@ -467,6 +452,7 @@
                             targetEl.innerHTML = cardHTML;
                         }
                     }
+                });
 
                 let scorerHTML = "";
                 if(data.top_scorer.length === 0) {
@@ -490,7 +476,7 @@
 
         fetchData();
         setInterval(fetchData, 10000);
-        /* --- TARUH KODE DI SINI --- */
+
         window.addEventListener('load', () => {
             const container = document.querySelector('.bracket-wrapper');
             if (container && window.innerWidth <= 768) {
